@@ -1,0 +1,153 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: linear-gradient(135deg, #3a0ca3, #7209b7, #f72585);
+  color: #fff;
+  transition: background 0.5s, color 0.5s;
+}
+body.light {
+  background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+  color: #111;
+}
+
+/* Toggle Button */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: #ff7bff;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s, transform 0.2s;
+  z-index: 999;
+}
+#theme-toggle:hover {
+  background: #7209b7;
+  transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.hero-left {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+.hero-left h1 {
+  font-size: 3rem;
+}
+.hero-left h1 span {
+  color: #ffd700;
+}
+.hero-left p {
+  margin-top: 10px;
+  font-size: 1.3rem;
+}
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.profile-img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
+  transition: transform 0.4s;
+}
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about, .skills, .contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+.about h2, .skills h2, .contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Skills Animation */
+.skills-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+.skills-track {
+  display: inline-block;
+  animation: scroll 15s linear infinite;
+}
+.skills-track span {
+  display: inline-block;
+  margin: 0 30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 8px #fff, 0 0 16px #ff00ff;
+}
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Contact Section */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.contact-links a {
+  font-size: 2rem;
+  color: #ffd700;
+  transition: transform 0.3s, color 0.3s;
+}
+.contact-links a:hover {
+  transform: scale(1.2) rotate(10deg);
+  color: #ff00ff;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 2s ease-in forwards;
+}
+.slide-up {
+  animation: slideUp 2s ease-out forwards;
+}
+.pop-in {
+  animation: popIn 2s ease-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
